@@ -1,0 +1,108 @@
+#map_canvas {
+    height: 100%;
+    width: 100%;
+
+}
+#map_canvas {
+    position: relative;
+}
+.angular-google-map-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.titlebar {
+    background-color: #5DADE2;
+}
+.container{
+    width:1000px;
+    height:1000px;
+    border:1px solid black;
+    left:100px;
+    top:70px;
+}
+.subContainer{
+    width:998px;
+    height:165px;
+    border:1px solid black;
+    float: left;
+    margin-top: 0px;
+}
+.mainTitle{
+    color: white;
+    text-align:center
+}
+.search{
+    margin-top:50px;
+    float: right;
+    margin-left: 20px;
+}
+.input1{
+    margin-top:50px;
+    float: right;
+    margin-left: 20px;
+    font-size:18px;
+    font-weight:bold;
+}
+.list{
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+    background-color: #F2F4F4  ;
+    color: darkred;
+    border-radius: 25px;
+    box-shadow: 1px 10px 10px 10px #df8505 ;
+    float: left;
+    margin-left: 7px;
+    width:545px;
+    height:200px;
+    text-align: left;
+}
+.allData{
+    width:100%;
+    height:43%;
+    top:600px;
+    border:1px solid black;
+    text-align: left;
+    margin: auto;
+    overflow: scroll;
+    font-size:17px;
+    font-weight:bold;
+    color: white;
+}
+.mapBg{
+    width:100%;
+    height:40%;
+    border:1px solid black;
+    float: left;
+}
+.imageSize{
+    height: 90px;
+    width:200px;
+    text-align: center;
+    margin-left: auto;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currentl*/
+    cursor: default;
+    background: gray;
+}
+.hide {
+     display: none;
+     padding:2px;
+     margin:0px;
+     border:5px solid gray;
+     z-index:1;
+     position:absolute;
+     left:0em;
+     top:-1em;
+     background-color:#fff;
+ }

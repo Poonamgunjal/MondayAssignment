@@ -34,7 +34,8 @@
         <ui-gmap-marker ng-repeat="m in cityMarkers" coords="m" icon="m.icon" name="{{m.title}}"
                         idkey="m.id">
             <ui-gmap-window ng-cloak  coords="m" isIconVisibleOnClick="true" options="map.infoWindowWithCustomClass.options">
-                <p><br><b>Name:</b> <a target="_blank" href="{{m.url}}">{{m.title}}</a><br><br> <b>Address:</b>{{m.name}}</p>
+                <p><br><b>Name:</b> <a target="_blank" href="{{m.url}}">{{m.title}}</a><br><br>
+                    <b>Address:</b>{{m.name}}<br> <b>Rating:{{m.rating}} </b></p>
             </ui-gmap-window>
         </ui-gmap-marker>
 	</ui-gmap-google-map>

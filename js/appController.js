@@ -21,6 +21,7 @@ angular.module('appMaps', ['uiGmapgoogle-maps'])
             var elements = result.response.groups[0].items;
             for (var i = 0; i < elements.length; i++) {
                 $scope.listItems[i] = elements[i].venue;
+                console.log($scope.listItems[i]);
 
                 var marker = {
                     id: i,
@@ -30,6 +31,7 @@ angular.module('appMaps', ['uiGmapgoogle-maps'])
                     name: $scope.listItems[i].location.address,
                     showWindow: true,
                     url: $scope.listItems[i].url,
+                    rating:$scope.listItems[i].rating,
                     panTo: true,
                     icon: google.maps.icon
                 };

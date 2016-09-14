@@ -6,11 +6,20 @@ angular.module('appMaps', ['uiGmapgoogle-maps'])
         $scope.cityMarkers = [];
         $scope.coordsUpdates = 0;
         $scope.dynamicMoveCtr = 0;
-        var cnt = 0;
-
+        $scope.map = {
+            center: {
+                latitude: -33.86785,
+                longitude: 151.20732
+            }, zoom: 6,
+            panControl: true,
+            scaleControl: true,
+            mapTypeControl:true,
+            streetViewControl:true,
+            overviewMapControl:true,
+            rotateControl:true
+        };
         $scope.searchClick = function () {
             getLocation();
-            cnt++;
         };
 
         var getLocation = function () {
@@ -23,6 +32,9 @@ angular.module('appMaps', ['uiGmapgoogle-maps'])
                 displayData(results);
             });
         }
+
+        getLocation();
+
         function displayData(result) {
             $scope.position = ['0,0'];
             $scope.cityMarkers.length = 0;
@@ -31,7 +43,7 @@ angular.module('appMaps', ['uiGmapgoogle-maps'])
                 center: {
                     latitude: result.response.geocode.center.lat,
                     longitude: result.response.geocode.center.lng
-                }, zoom: 7,
+                }, zoom: 6,
                 panControl: true,
                 scaleControl: true,
                 mapTypeControl:true,
@@ -58,8 +70,5 @@ angular.module('appMaps', ['uiGmapgoogle-maps'])
                 $scope.cityMarkers.push(marker);
             }
         }
-        
-        if (cnt == 0) {
-            getLocation();
-        }
+
     });

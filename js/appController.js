@@ -31,7 +31,7 @@ angular.module('appMaps', ['uiGmapgoogle-maps'])
                 center: {
                     latitude: result.response.geocode.center.lat,
                     longitude: result.response.geocode.center.lng
-                }, zoom: 7, bounds: result.response.geocode.geometry.bounds.ne,
+                }, zoom: 7,
                 panControl: true,
                 scaleControl: true,
                 mapTypeControl:true,

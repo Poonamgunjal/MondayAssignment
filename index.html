@@ -3,20 +3,18 @@
 
 <head>
     <meta charset="utf-8"/>
-    <title>WhoWhatWhere</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqrm1LI-8ddEp54fYxIEAP1sF64rc4wMU"></script>
+    <title>whoWhatWhere</title>
     <script src="services/angular.js"></script>
     <script src="services/angular-google-maps.js"></script>
+    <script src="js/appController.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/map.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-combined.min.css"/>
     <script src="services/angular-route.js"></script>
     <script src="services/angular-route.min.js"></script>
     <script src="services/json2.min.js"></script>
     <script src="services/lodash.js"></script>
     <script src="services/jquery-2.0.3.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/map.css"/>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-combined.min.css"/>
-
-    <script src="js/appController.js"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqrm1LI-8ddEp54fYxIEAP1sF64rc4wMU"></script>
 </head>
 
 <body class="noselect">
@@ -38,10 +36,12 @@
     </div>
 
     <div class="mapBg">
-        <div id="map_canvas" ui-options="mapOptions" onload="searchClick()">
-            <ui-gmap-google-map center="map.center" zoom="map.zoom" panTo="true"
-                                zoomControl="map.zoomControl" panControl="map.panControl"
-                                scaleControl="map.scaleControl" mapTypeControl="map.mapTypeControl"
+        <div id="map_canvas" ui-options="mapOptions">
+            <ui-gmap-google-map center="map.center" zoom="map.zoom" panTo="true" bounds="map.bounds"
+                                zoomControl="map.zoomControl"
+                                panControl="map.panControl"
+                                scaleControl="map.scaleControl"
+                                mapTypeControl="map.mapTypeControl"
                                 streetViewControl="map.streetViewControl"
                                 overviewMapControl="map.overviewMapControl" rotateControl="map.rotateControl">
                 <ui-gmap-marker ng-repeat="m in cityMarkers" coords="m" icon="m.icon" name="{{m.title}}" idkey="m.id">

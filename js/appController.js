@@ -6,11 +6,12 @@ angular.module('appMaps', ['uiGmapgoogle-maps'])
         $scope.cityMarkers = [];
         $scope.coordsUpdates = 0;
         $scope.dynamicMoveCtr = 0;
+        var cnt = 0;
         $scope.map = {
             center: {
                 latitude: -33.86785,
                 longitude: 151.20732
-            }, zoom: 6,
+            }, zoom: 7,
             panControl: true,
             scaleControl: true,
             mapTypeControl:true,
@@ -20,6 +21,7 @@ angular.module('appMaps', ['uiGmapgoogle-maps'])
         };
         $scope.searchClick = function () {
             getLocation();
+            cnt++;
         };
 
         var getLocation = function () {
@@ -29,12 +31,11 @@ angular.module('appMaps', ['uiGmapgoogle-maps'])
                 "&client_id=FHNVW0RNM0MK5WT1HEA1V2BHYFPIJNP2Y3HNV05BFVZDFZ0E&&" +
                 "client_secret=M1BDWESYNYZOETXW1OFWMVRVW4CPJV2IWIRWJE3FSUWHDZFQ&&v=20131124").success(function (data) {
                 results = data;
+                console.log(results.response.geocode.center.lat,results.response.geocode.center.lng);
+
                 displayData(results);
             });
         }
-
-        getLocation();
-
         function displayData(result) {
             $scope.position = ['0,0'];
             $scope.cityMarkers.length = 0;
@@ -43,7 +44,7 @@ angular.module('appMaps', ['uiGmapgoogle-maps'])
                 center: {
                     latitude: result.response.geocode.center.lat,
                     longitude: result.response.geocode.center.lng
-                }, zoom: 6,
+                }, zoom: 7,
                 panControl: true,
                 scaleControl: true,
                 mapTypeControl:true,
@@ -71,4 +72,5 @@ angular.module('appMaps', ['uiGmapgoogle-maps'])
             }
         }
 
+            getLocation();
     });

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8"/>
-    <title>whoWhatWhere</title>
+    <title>WhoWhatWhere</title>
     <script src="services/angular.js"></script>
     <script src="services/angular-google-maps.js"></script>
     <script src="js/appController.js"></script>
@@ -37,7 +37,11 @@
 
     <div class="mapBg">
         <div id="map_canvas" ui-options="mapOptions">
-            <ui-gmap-google-map center="map.center" zoom="map.zoom" pan="true" bounds="map.bounds">
+            <ui-gmap-google-map center="map.center" zoom="map.zoom" panTo="true" bounds="map.bounds"
+                                zoomControl="map.zoomControl" panControl="map.panControl"
+                                scaleControl="map.scaleControl" mapTypeControl="map.mapTypeControl"
+                                streetViewControl="map.streetViewControl"
+                                overviewMapControl="map.overviewMapControl" rotateControl="map.rotateControl">
                 <ui-gmap-marker ng-repeat="m in cityMarkers" coords="m" icon="m.icon" name="{{m.title}}" idkey="m.id">
                     <ui-gmap-window ng-cloak coords="m" isIconVisibleOnClick="true"
                                     options="map.infoWindowWithCustomClass.options">

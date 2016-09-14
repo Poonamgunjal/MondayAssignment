@@ -1,5 +1,5 @@
 angular.module('appMaps', ['uiGmapgoogle-maps'])
-    .controller('mainCtrl', function ($scope, $rootScope, $timeout, $log, $q, $http) {
+    .controller('mainCtrl', function ($scope, $http) {
         $scope.location = 'sydney';
         $scope.type = 'Food';
         $scope.listItems = [];
@@ -16,13 +16,11 @@ angular.module('appMaps', ['uiGmapgoogle-maps'])
                 center: {
                     latitude: result.response.geocode.center.lat,
                     longitude: result.response.geocode.center.lng
-                }, zoom: 7
+                }, zoom: 8, bounds: result.response.geocode.geometry.bounds.ne
             };
             var elements = result.response.groups[0].items;
             for (var i = 0; i < elements.length; i++) {
                 $scope.listItems[i] = elements[i].venue;
-                console.log($scope.listItems[i]);
-
                 var marker = {
                     id: i,
                     latitude: $scope.listItems[i].location.lat,
@@ -31,7 +29,7 @@ angular.module('appMaps', ['uiGmapgoogle-maps'])
                     name: $scope.listItems[i].location.address,
                     showWindow: true,
                     url: $scope.listItems[i].url,
-                    rating:$scope.listItems[i].rating,
+                    rating: $scope.listItems[i].rating,
                     panTo: true,
                     icon: google.maps.icon
                 };

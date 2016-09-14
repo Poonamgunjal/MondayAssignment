@@ -1,10 +1,8 @@
 #map_canvas {
     height: 100%;
     width: 100%;
-
-}
-#map_canvas {
     position: relative;
+
 }
 .angular-google-map-container{
     position: absolute;
@@ -43,7 +41,14 @@
     margin-top:50px;
     float: right;
     margin-left: 20px;
-    font-size:18px;
+    font-size:15px;
+    font-weight:bold;
+}
+.input2{
+    margin-top:50px;
+    float: right;
+    margin-left: 20px;
+    font-size:20px;
     font-weight:bold;
 }
 .list{
@@ -106,3 +111,10 @@
      top:-1em;
      background-color:#fff;
  }
+.imgbackground{
+    margin-left: 350px;
+    margin-top: -170px;
+    width: 200px;
+    height: 165px;
+    border: 2px solid #df8505
+}

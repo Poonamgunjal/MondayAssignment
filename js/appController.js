@@ -31,8 +31,6 @@ angular.module('appMaps', ['uiGmapgoogle-maps'])
                 "&client_id=FHNVW0RNM0MK5WT1HEA1V2BHYFPIJNP2Y3HNV05BFVZDFZ0E&&" +
                 "client_secret=M1BDWESYNYZOETXW1OFWMVRVW4CPJV2IWIRWJE3FSUWHDZFQ&&v=20131124").success(function (data) {
                 results = data;
-                console.log(results.response.geocode.center.lat,results.response.geocode.center.lng);
-
                 displayData(results);
             });
         }

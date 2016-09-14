@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html ng-app="appMaps">
-
+<script src="services/angular.js"></script>
+<script src="services/angular-google-maps.js"></script>
+<script src="js/appController.js"></script>
+<script src="services/angular-route.js"></script>
+<script src="services/angular-route.min.js"></script>
+<script src="services/json2.min.js"></script>
+<script src="services/lodash.js"></script>
+<script src="services/jquery-2.0.3.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqrm1LI-8ddEp54fYxIEAP1sF64rc4wMU"></script>
 <head>
     <meta charset="utf-8"/>
     <title>whoWhatWhere</title>
-    <script src="services/angular.js"></script>
-    <script src="services/angular-google-maps.js"></script>
-    <script src="js/appController.js"></script>
     <link rel="stylesheet" type="text/css" href="css/map.css"/>
     <link rel="stylesheet" type="text/css" href="css/bootstrap-combined.min.css"/>
-    <script src="services/angular-route.js"></script>
-    <script src="services/angular-route.min.js"></script>
-    <script src="services/json2.min.js"></script>
-    <script src="services/lodash.js"></script>
-    <script src="services/jquery-2.0.3.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqrm1LI-8ddEp54fYxIEAP1sF64rc4wMU"></script>
+
 </head>
 
 <body class="noselect">
@@ -22,15 +22,15 @@
     <div class="container titlebar subContainer">
         <br>
         <h1 class="mainTitle" style="font-size: 50px;">Who What Where</h1>
-        <button type="button" class="btn btn-success search" ng-click="searchClick()">Search</button>
-        <select class="form-control input1" id="what" placeholder="I am looking for" ng-model="type">
+        <button  type="button" class="btn btn-success search col-md-4" ng-click="searchClick()">Search</button>
+        <select class="form-control input1 col-md-4" id="what" placeholder="I am looking for" ng-model="type">
             <option value="Food">Food</option>
             <option value="Theaters">Theaters</option>
             <option value="Shopping Malls">Shopping Malls</option>
             <option value="Night Clubs">Night Clubs</option>
         </select>
 
-        <input class="form-control input2" id="where" placeholder="Enter the city" type="text" ng-model="location"
+        <input class="form-control input2 col-md-4" id="where" placeholder="Enter the city" type="text" ng-model="location"
                style="font-size: 16px;"/>
 
     </div>
@@ -74,4 +74,5 @@
     </div>
 </div>
 </body>
+
 </html>
